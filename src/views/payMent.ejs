@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/stylePayment.css">
+    <title>Pay ment</title>
+</head>
+<body>
+    <div class="back_container">
+        <form action="/TMDT/trangchu" method="GET" class="form_search_container">
+            <div class="form-group-search">
+                <input type="submit" value="Back">
+            </div>
+        </form>
+    </div>
+    <br/>
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form action="/TMDT/payment" method="POST">
+        <div class="row">
+          <div class="col-50">
+            <h3>Billing Address</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="fname" name="name" placeholder="Nguyen Van A">
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="example@gmail.com">
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <input type="text" id="adr" name="address" placeholder="Ha dong, Ha Noi">
+            <label for="phone"><i class="fa fa-phone"></i> Phone</label>
+            <input type="text" id="phone" name="phone" placeholder="033xxxxxxx">
+          </div>
+
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="NGUYEN VAN A">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="thang 3">
+          </div>
+            <input type="text" hidden value="<%= totalPrice[0].tong %>" name="totalPrices"/>
+            <input type="text" hidden value="<%= totalQuantity[0].tongmathang %>" name="totalQuantitys"/>
+            <input type="text" hidden value="Shipper is coming" name="status"/>
+        </div>
+        <input type="submit" value="Tiep tuc thanh toan" class="btn">
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

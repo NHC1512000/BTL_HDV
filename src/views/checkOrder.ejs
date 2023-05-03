@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="/css/styleHomePage.css" />
+    <title>Check Order</title>
+</head>
+<body>
+    <div class="topnav">
+        <a href="/TMDT/trangchu">Home</a>
+        <a href="/TMDT/checkinventory">Check Inventory</a>
+        <a class="active" href="/TMDT/checkorder">Check Order</a>
+        <div class="logout-container">
+            <form action="/TMDT/dangxuat" method="POST">
+                <button type="submit">Logout</button>
+              </form>
+        </div>
+      </div>
+
+      <div class="w3-container">
+        <h2>Order status</h2>
+      
+        <table class="w3-table-all w3-hoverable">
+          <thead>
+            <tr class="w3-light-grey">
+              <th>Name</th>
+              <th>Address</th>
+              <th>Phone</th>
+              <th>Quantity</th>
+              <th>Total price</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>      
+                <% for(let i=0; i < dataBill.length ;i ++ ) { %>  
+                   <tr>
+                     <td><%= dataBill[i].name %></td>
+                     <td><%= dataBill[i].address %></td>
+                     <td><%= dataBill[i].phone %></td>
+                     <td><%= dataBill[i].quantity %></td>
+                     <td><%= dataBill[i].totalPrice %></td>
+                     <td><%= dataBill[i].status %></td>
+                     <td>
+                      <form action="/TMDT/deletebill" method="POST">
+                        <input type="text" hidden value="<%= dataBill[i].id %>" name="id"/>
+                        <input type="submit" value="Delete" />
+                      </form>
+                     </td>
+                   </tr>
+                <% } %>            
+          </tbody>     
+        </table>
+      </div>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="/css/styleHomePage.css" />
+    <title>Check Inventory</title>
+</head>
+<body>
+    <div class="topnav">
+        <a href="/TMDT/trangchu">Home</a>
+        <a class="active" href="/TMDT/checkinventory">Check Inventory</a>
+        <a href="/TMDT/checkorder">Check Order</a>
+        <div class="logout-container">
+            <form action="/TMDT/dangxuat" method="POST">
+                <button type="submit">Logout</button>
+              </form>
+        </div>
+      </div>
+
+    <div class="search_container">
+        <form action="/TMDT/checkinventorystatus" method="POST" class="form_search_container">
+            <div class="form-group-search">
+                <label for="inventoryname" class="text-info">Inventory name:</label><br>
+                <input type="text" name="inventoryname" id="inventoryname" class="form-control">
+            </div>
+            <div class="form-group-search">
+                <label for="quantity" class="text-info">Quantity:</label><br>
+                <input type="text" name="quantity" id="quantity" class="form-control">
+            </div>
+            <div class="form-group-search">
+                <input type="submit" name="submit" class="btn btn-info btn-md" value="Check">
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>
